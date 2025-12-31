@@ -174,7 +174,7 @@ st.set_page_config(
 
 # 使用侧边栏实现多页面显示效果
 with st.sidebar:
-    st.image('images/rigth_logo.png', width=100)
+    st.image('rigth_logo.png', width=100)
     st.title('请选择页面')
     page = st.selectbox("请选择页面", ["简介页面", "预测分类页面"], label_visibility='collapsed')
 
@@ -188,7 +188,7 @@ if page == "简介页面":
     该数据集记录了 344 行观测数据，包含 3 个不同物种的企鹅：阿德利企鹅、巴布亚企
 鹅和帽带企鹅的各种信息。""")
     st.header('三种企鹅的卡通图像')
-    st.image('images/penguins.png')
+    st.image('penguins.png')
 
 elif page == "预测分类页面":
     st.header("预测企鹅分类")
@@ -290,9 +290,9 @@ elif page == "预测分类页面":
                 
                 with col_logo:
                     try:
-                        st.image(f'images/{predict_result_species}.png', width=300, caption=predict_result_species)
+                        st.image(f'{predict_result_species}.png', width=300, caption=predict_result_species)
                     except:
-                        st.image('images/rigth_logo.png', width=300, caption="企鹅分类器")
+                        st.image('rigth_logo.png', width=300, caption="企鹅分类器")
                 
             except Exception as e:
                 st.error(f"预测出错: {str(e)}")
@@ -304,4 +304,5 @@ elif page == "预测分类页面":
     # 显示在表单外
     with col_logo:
         if not submitted:
-            st.image('images/rigth_logo.png', width=300, caption="请输入参数进行预测")
+            st.image('rigth_logo.png', width=300, caption="请输入参数进行预测")
+
